@@ -8,6 +8,12 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+// ここから
+import { Amplify, Auth } from 'aws-amplify';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import amplify from '../aws-exports';
+Amplify.configure(amplify);
+// ここまで
 
 @NgModule({
   declarations: [
@@ -20,7 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    /*aws*/
+    AmplifyAuthenticatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
